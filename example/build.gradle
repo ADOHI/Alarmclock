@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-command'
+apply plugin: 'realm-android'
+
+
+
+android {
+    compileSdkVersion sdkVersion
+    buildToolsVersion buildTools
+
+    defaultConfig {
+        applicationId "alarmclock"
+        minSdkVersion 15
+        targetSdkVersion 23
+        targetSdkVersion sdkVersion
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    command {
+        events 2000
+    }
+}
+
+dependencies {
+    compile project(':adapters')
+    compile "com.android.support:appcompat-v7:${supportLibraryVersion}"
+    compile "com.android.support:recyclerview-v7:${supportLibraryVersion}"
+
+    compile 'com.android.support:support-v4:25.1.0'
+    compile 'com.android.support:support-vector-drawable:25.1.0'
+
+
+}

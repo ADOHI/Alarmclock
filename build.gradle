@@ -1,0 +1,42 @@
+apply plugin: 'ch.netzwerg.release'
+
+buildscript {
+    ext {
+        sdkVersion = 25
+        buildTools = '25.0.2'
+        realmVersion = '2.1.1'
+        supportLibraryVersion = '25.0.0'
+    }
+
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.3'                    // Android Build tools
+        classpath 'ch.netzwerg:gradle-release-plugin:1.2.0'                 // Manage Release tags / versioning
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'    // Allows you to install AAR's locally
+        classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.0.1'   // OJO integration
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'      // Bintray integration
+        classpath 'com.novoda:gradle-android-command-plugin:1.5.0'          // ADB commands from Gradle (monkey)
+        classpath "io.realm:realm-gradle-plugin:${realmVersion}"            // Realm base library
+
+    }
+}
+
+allprojects {
+    group = 'io.realm'
+    version = file("${rootDir}/version.txt").text.trim();
+    repositories {
+        jcenter()
+    }
+}
+
+// Configure ch.netzwerg.release plugin
+// See https://github.com/netzwerg/gradle-release-plugin
+task build {}
+release {
+    push = false
+    versionSuffix = '-SNAPSHOT'
+    tagPrefix = 'v'
+}

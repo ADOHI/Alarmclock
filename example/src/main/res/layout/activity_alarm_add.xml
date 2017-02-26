@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_alarm_add"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="io.realm.examples.alarmclock.AlarmAddActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="메모 설정"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorAccent" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="메모를 입력하세요"
+                android:ems="10"
+                android:id="@+id/et_memo" />
+
+            <TextView
+                android:text="시간 설정"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorAccent" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <NumberPicker
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/np_hour"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:text="시"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView"
+                    android:layout_weight="1"
+                    android:gravity="center"/>
+
+                <NumberPicker
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/np_minute"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:text="분"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView2"
+                    android:layout_weight="1"
+                    android:gravity="center"/>
+
+                <Switch
+                    android:text="AM"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/sw_ampm"
+                    android:layout_weight="1"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <TextView
+                android:text="요일 반복"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorAccent" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <CheckBox
+                    android:text="월"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cb_mon"
+                    android:layout_weight="1" />
+
+                <CheckBox
+                    android:text="화"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cb_tue"
+                    android:layout_weight="1" />
+
+                <CheckBox
+                    android:text="수"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cb_wed"
+                    android:layout_weight="1" />
+
+                <CheckBox
+                    android:text="목"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cb_thr"
+                    android:layout_weight="1" />
+
+                <CheckBox
+                    android:text="금"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cb_fri"
+                    android:layout_weight="1" />
+
+                <CheckBox
+                    android:text="토"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cb_sat"
+                    android:layout_weight="1" />
+
+                <CheckBox
+                    android:text="일"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cb_sun"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <TextView
+                android:text="소리 / 진동 설정"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorAccent" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <CheckBox
+                    android:text="소리"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cb_bell"
+                    android:layout_weight="1" />
+
+                <CheckBox
+                    android:text="진동"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cb_vb"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <TextView
+                android:text="음량 조절"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorAccent"
+                android:layout_weight="1" />
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:id="@+id/sb_volume"
+                android:max="100"
+                android:progress="50" />
+
+            <TextView
+                android:text="날씨/위치 표시"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorAccent" />
+
+            <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <CheckBox
+                    android:text="날씨 표시"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cb_weather"
+                    android:layout_weight="1"/>
+
+                <CheckBox
+                    android:text="위치 표시"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cb_location"
+                    android:layout_weight="1"/>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:text="선택 날짜 이후로 예약"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorAccent" />
+
+            <CalendarView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cv_calendar" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:text="저장"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bt_save"
+                    android:layout_weight="1"
+                    android:background="?attr/colorAccent"
+                    android:layout_marginRight="10dp"/>
+
+                <Button
+                    android:text="취소"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bt_cancle"
+                    android:layout_weight="1"
+                    android:background="?attr/colorAccent"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

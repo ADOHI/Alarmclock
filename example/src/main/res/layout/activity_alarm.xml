@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_alarm"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="io.realm.examples.alarmclock.AlarmActivity"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="일어나!"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="80sp"
+                android:id="@+id/textView3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_alarmAmpm"
+                android:gravity="center"
+                android:textSize="30sp"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="12시"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_alarmHour"
+                    android:gravity="center"
+                    android:textSize="80sp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:text="50분"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_alarmMinute"
+                    android:gravity="center"
+                    android:textSize="80sp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_notifications_black_24dp"
+                android:id="@+id/iv_weather" />
+
+            <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="오늘의 기온 : "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:text="잠시만"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:id="@+id/tv_weather"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="현재 위치 : "
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="30sp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:text="기다려 주세요"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:id="@+id/tv_location"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:text="메모"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:id="@+id/tv_alarmMemo" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="60sp"
+                >
+
+                <Button
+                    android:text="10분 후 재시작"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/bt_realarm"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:gravity="center"/>
+
+                <Button
+                    android:text="종료"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="30sp"
+                    android:id="@+id/bt_alarmCancle"
+                    android:layout_weight="1"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
